@@ -36,17 +36,23 @@ input{
     font-size: 18px;
 }
 .text{
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
 button{
-    margin-top: 20px;
+    margin-top: 18px;
     height: 56px;
     width: 350px;
     border-radius: 8px;
     font-size: 18px;
     background-color: var(--main-color);
     color: white;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--second-color);
+    transition: .5s ease-in-out;
 }
 
 a{
