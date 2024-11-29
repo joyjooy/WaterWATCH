@@ -9,17 +9,40 @@
   <body>
     <div class="container">
       <img src="asset/illlustrate.png" alt="WaterWATCH" srcset="" />
-      <div class="form">
+     <form id="register-form" class="form">
         <div class="text">Username</div>
-        <input type="text" placeholder="username" />
+        <input type="text" placeholder="username" id="username"/>
         <div class="text">Email</div>
-        <input type="text" placeholder="email" />
+        <input type="text" placeholder="email" id="email"/>
         <div class="text">Password</div>
-        <input type="text" placeholder="password" />
+        <input type="text" placeholder="password" id="password"/>
         <div class="text">Confirm Password</div>
-        <input type="text" placeholder="confirm password" />
+        <input type="text" placeholder="confirm password" id="confirmpassword"/>
       </div>
-      <button>Submit</button>
-    </div>
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      document
+      .getElementById("register-form")
+      .addEventListener("submit", function(event){
+        event.preventDefault();
+
+        var username  = document.getElementById("username").value;
+        var email  = document.getElementById("email").value;
+        var password  = document.getElementById("password").value;
+        var confirmpassword  = document.getElementById("confirmpassword").value;
+
+
+        const user = {
+          username: username,
+          email: email,
+          password: password,
+        };
+
+        localStorage.setItem(username, JSON.stringify(user));
+        alert("Register successful! Please Login. ");
+        window.location.href = "login.html";
+      })
+    </script>
   </body>
 </html>

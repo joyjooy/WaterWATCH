@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <form id="login-form" class="container">
+      <img src="asset/illlustrate.png" alt="WaterWATCH" srcset="" />
+      <div class="form">
+        <div class="text">Username</div>
+        <input type="text" placeholder="username" id="username" />
+
+        <div class="text">Password</div>
+        <input type="password" placeholder="password" id="password" />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+    <a href="register.html">register</a>
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+
+          var user = localStorage.getItem(username);
+
+          if (user) {
+            var parsedUser = JSON.parse(user);
+            if (parsedUser.password === password) {
+              localStorage.setItem("user", JSON.stringify(parsedUser));
+              window.location.href = "dashboard.html";
+              alert("successful login");
+            } else {
+              alert("Incorrect password");
+            }
+          } else {
+            alert("User not found");
+          }
+        });
+    </script>
+  </body>
+</html>
