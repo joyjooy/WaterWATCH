@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/mapleak.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>WaterWATCH</title>
+    <style>
+      #google-map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <div class="logo1">
+        <a href="DashBoard.html"
+          ><img src="Asset/logo1.png" alt="" srcset=""
+        /></a>
+      </div>
+      <div>
+        <p>Leak Map</p>
+      </div>
+      <div>
+        <a href="Setting.html">
+          <img src="Asset/setting.png" alt="WaterWATCH" srcset="" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+      <!-- API KEY = AIzaSyBoTkWNeZzdjPLZIRLTDCqrMAhHeHvlduk -->
+      <div id="google-map"></div>
+      <div class="leak-box">
+        <div class="leak-detected">
+          <img class="leak" src="Asset/leak detected.png" />Leak Detected
+        </div>
+        <div class="no-leak-detected">
+          <img class="no-leak" src="Asset/No leak detected.png" />No Leak
+          Detected
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="icon">
+        <a href="MapLeak.html">
+          <img
+            src="Asset/leakmap.png"
+            width="20"
+            height="20"
+            alt="WaterWATCH"
+            srcset="" /></a
+        ><label>Leak</label>
+      </div>
+      <div class="icon">
+        <a href="DashBoard.html">
+          <img
+            src="Asset/home.png"
+            width="20"
+            height="20"
+            alt="WaterWATCH"
+            srcset="" /></a
+        ><label>Home</label>
+      </div>
+      <div class="icon">
+        <a href="history.html">
+          <img
+            src="Asset/history.png"
+            width="20"
+            height="20"
+            alt="WaterWATCH"
+            srcset="" /></a
+        ><label>History</label>
+      </div>
+    </div>
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoTkWNeZzdjPLZIRLTDCqrMAhHeHvlduk&callback=initMap"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

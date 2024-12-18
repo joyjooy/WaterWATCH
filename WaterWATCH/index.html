@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>WaterWATCH</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img
+          src="Asset/Water-Leak-Detection-Repair.jpg"
+          alt="WaterWATCH Logo"
+          class="brand"
+        />
+        <img
+          src="Asset/brand water leak.png"
+          alt="WaterWATCH Logo"
+          class="brand-logo"
+        />
+      </div>
+      <form id="login-form" class="form">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="username"
+          required
+        />
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="password"
+          required
+        />
+
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+    </div>
+    <hr />
+    <div class="register-link">
+      <a href="Register.html" class="register-btn">Register</a>
+    </div>
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+
+          var user = localStorage.getItem(username);
+
+          if (user) {
+            var parsedUser = JSON.parse(user);
+            if (parsedUser.password === password) {
+              localStorage.setItem("user", JSON.stringify(parsedUser));
+              window.location.href = "DashBoard.html";
+              alert("successful login");
+            } else {
+              alert("Incorrect password");
+            }
+          } else {
+            alert("User not found");
+          }
+        });
+    </script>
+  </body>
+</html>
